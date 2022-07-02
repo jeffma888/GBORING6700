@@ -108,8 +108,8 @@ async def detect_via_web_form(request: Request,
 
 @app.post("/detect/")
 async def detect_via_api(request: Request,
-						file_list: List[UploadFile] = File(...), 
-						model_name: str = Form(...),
+						file_list: List[UploadFile] = File('last'), 
+						model_name: str = Form("last"),
 						img_size: Optional[int] = Form(640),
 						download_image: Optional[bool] = Form(False)):
 	
@@ -194,6 +194,7 @@ def base64EncodeImage(img):
 if __name__ == '__main__':
 
 	parser = argparse.ArgumentParser()
+	parser.add_argument('--max-det', default=1, type=int,  help='maximum detections per image')
 	parser.add_argument("--port", default=8000, type=int, help="port number")
 	parser.add_argument('--host', default = '0.0.0.0')
 	parser.add_argument('--precache-models', action='store_true', help='Pre-cache all models in memory upon initialization, otherwise dynamically caches models')
