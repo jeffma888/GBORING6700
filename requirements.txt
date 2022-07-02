@@ -1,23 +1,16 @@
 # pip install -r requirements.txt
 
 # FastAPI --------------------------------------
-fastapi
-uvicorn
-jinja2
-aiofiles
-python-multipart
-requests
+fastapi~=0.78.0
+uvicorn~=0.18.2
+requests~=2.28.1
 
 # Other stuff from https://github.com/ultralytics/yolov5/blob/master/requirements.txt
 # base ----------------------------------------
-Cython
 matplotlib>=3.2.2
 numpy>=1.18.5
-opencv-python>=4.1.2
-Pillow
+Pillow~=9.2.0
 PyYAML>=5.3.1
-scipy>=1.4.1
-tensorboard>=2.2
 torch>=1.7.0
 tqdm>=4.41.0
 
@@ -26,7 +19,7 @@ tqdm>=4.41.0
 
 # plotting ------------------------------------
 seaborn>=0.11.0
-pandas
+pandas~=1.4.3
 
 # export --------------------------------------
 # coremltools>=4.1
@@ -34,6 +27,5 @@ pandas
 # scikit-learn==0.19.2  # for coreml quantization
 
 # extras --------------------------------------
-thop  # FLOPS computation
-pycocotools>=2.0  # COCO mAP
 torchvision>=0.8.1
+pydantic~=1.9.1
